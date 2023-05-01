@@ -1,0 +1,14 @@
+<h1 style="text-align: center;">Auto solve</h1>
+
+<table style="border-collapse: collapse; margin: auto;">
+  <% @board.each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td style="border: 1px solid #ccc; width: 30px; height: 30px; text-align: center; font-size: 20px; font-weight: bold;"><%= col || " " %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<div style="text-align: center">
+<%= link_to "Back to Home", root_path %>
+</div>

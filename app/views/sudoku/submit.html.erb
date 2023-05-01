@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Submitted</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .alert {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    .alert-success {
+      color: #3c763d;
+      background-color: #dff0d8;
+      border-color: #d6e9c6;
+    }
+    .alert-danger {
+      color: #a94442;
+      background-color: #f2dede;
+      border-color: #ebccd1;
+    }
+    p {
+      font-size: 16px;
+      margin: 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      text-align: center;
+      margin: 0 auto;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body style="text-align: center">
+<h1>Submitted</h1>
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+<div style="text-align: center">
+<table>
+  <% @board.each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td><%= col %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</div>
+<div style="text-align: center">
+  <%= link_to "Back to Home", root_path %>
+</div>
+</body>
+</html>
